@@ -1,41 +1,62 @@
-<section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
-  <p>Peace of mind from prototype to production</p>
-</section>
-
-<section class="row">
-  <article class="column">
-    <h2>Resources</h2>
-    <ul>
-      <li>
-        <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix/blob/v1.6/CHANGELOG.md">v1.6 Changelog</a>
-      </li>
-    </ul>
-  </article>
-  <article class="column">
-    <h2>Help</h2>
-    <ul>
-      <li>
-        <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
-      </li>
-      <li>
-        <a href="https://web.libera.chat/#elixir">#elixir on Libera Chat (IRC)</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
-      </li>
-      <li>
-        <a href="https://elixir-slackin.herokuapp.com/">Elixir on Slack</a>
-      </li>
-      <li>
-        <a href="https://discord.gg/elixir">Elixir on Discord</a>
-      </li>
-    </ul>
-  </article>
+<header id="page-header">
+  <div class="nav-row">
+    <div id="logo" class="flex-filler">
+        <a href="https://metalab.at/" title="Metalab OS">
+            <img src={Routes.static_path(@conn, "/images/metalab_logo.png")} alt="metalab Logo">
+        </a>
+    </div>
+    <nav id="interlinks" class="flex-filler">
+      <ul class="flat-nav">
+        <li id="wiki-nav">
+          <a id="wiki-ref" href="https://metalab.at/wiki">Wiki</a>
+        </li>
+        <li id="about-nav">
+          <a id="about-ref" href="https://metalab.at/wiki/Info_Folder">About</a>
+        </li>
+        <li id="location-nav">
+          <a id="location-ref" href="https://metalab.at/wiki/Lage">Location</a>
+        </li>
+        <li id="door-state-nav">
+          <a id="door-state-ref" href="http://eingang.metalab.at">🚪-Status</a>
+        </li>
+        <li id="sponsors-nav">
+          <a id="sponsors-ref" href="https://metalab.at/wiki/Sponsoren">Sponsoren</a>
+        </li>
+        <li id="impressum-nav">
+          <a id="impressum-ref" href="https://metalab.at/wiki/Impressum">Impressum</a>
+        </li>
+        <li id="english-nav">
+          <a id="english-ref" href="https://metalab.at/wiki/English">English</a>
+        </li>
+      </ul>
+    </nav>
+    <nav id="page-nav">
+      <ul id="user-menu">
+        <%= render MosWeb.SharedView, "user_menu.html", assigns %>
+      </ul>
+    </nav>
+  </div>
+</header>
+<section class="container" id="page-bottom1">
+  <div class="flex-column" id="frontpage-column1">
+    <div id="calendar-container">
+      <%= render MosWeb.CalendarView, "frontpage_container.html", assigns %>
+    </div>
+  </div>
+  <div class="flex-column" id="frontpage-column2">
+    <div id="member-pictures">
+      <%= render MosWeb.MemberPicturesView, "frontpage_container.html", assigns %>
+    </div>
+    <div id="announcements-container">
+      <%= render MosWeb.AnnouncementsView, "frontpage_container.html", assigns %>
+    </div>
+    <div class="flex-row">
+      <div id="projects-container">
+        <%= render MosWeb.ProjectsView, "frontpage_container.html", assigns %>
+      </div>
+      <div id="last-changes-container">
+        <%= render MosWeb.LastChangesView, "frontpage_container.html", assigns %>
+      </div>
+    </div>
+  </div>
 </section>
