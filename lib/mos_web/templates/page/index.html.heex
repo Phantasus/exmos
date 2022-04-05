@@ -6,29 +6,7 @@
         </a>
     </div>
     <nav id="interlinks" class="flex-filler">
-      <ul class="flat-nav">
-        <li id="wiki-nav">
-          <a id="wiki-ref" href="https://metalab.at/wiki">Wiki</a>
-        </li>
-        <li id="about-nav">
-          <a id="about-ref" href="https://metalab.at/wiki/Info_Folder">About</a>
-        </li>
-        <li id="location-nav">
-          <a id="location-ref" href="https://metalab.at/wiki/Lage">Location</a>
-        </li>
-        <li id="door-state-nav">
-          <a id="door-state-ref" href="http://eingang.metalab.at">🚪-Status</a>
-        </li>
-        <li id="sponsors-nav">
-          <a id="sponsors-ref" href="https://metalab.at/wiki/Sponsoren">Sponsoren</a>
-        </li>
-        <li id="impressum-nav">
-          <a id="impressum-ref" href="https://metalab.at/wiki/Impressum">Impressum</a>
-        </li>
-        <li id="english-nav">
-          <a id="english-ref" href="https://metalab.at/wiki/English">English</a>
-        </li>
-      </ul>
+      <%= render MosWeb.SharedView, "important_navlinks.html", assigns %>
     </nav>
     <nav id="page-nav">
       <ul id="user-menu">
@@ -38,25 +16,24 @@
   </div>
 </header>
 <section class="container" id="page-bottom1">
-  <div class="flex-column" id="frontpage-column1">
-    <div id="calendar-container">
+  <div id="calendar-container" class="widget">
       <%= render MosWeb.CalendarView, "frontpage_container.html", assigns %>
-    </div>
   </div>
-  <div class="flex-column" id="frontpage-column2">
-    <div id="member-pictures">
-      <%= render MosWeb.MemberPicturesView, "frontpage_container.html", assigns %>
-    </div>
-    <div id="announcements-container">
-      <%= render MosWeb.AnnouncementsView, "frontpage_container.html", assigns %>
-    </div>
-    <div class="flex-row">
-      <div id="projects-container">
-        <%= render MosWeb.ProjectsView, "frontpage_container.html", assigns %>
-      </div>
-      <div id="last-changes-container">
-        <%= render MosWeb.LastChangesView, "frontpage_container.html", assigns %>
-      </div>
-    </div>
+  <div id="introduction-container" class="widget">
+    <p>
+      220m² Raum im Herzen Wiens für technologisch-kreative Projekte, Veranstaltungen, Software, Hardware, Essen & mehr.... 
+    </p>
+  </div>
+  <div id="member-pictures" class="widget">
+    <%= render MosWeb.MemberPicturesView, "frontpage_container.html", assigns %>
+  </div>
+  <div id="announcements-container" class="widget">
+    <%= render MosWeb.AnnouncementsView, "frontpage_container.html", assigns %>
+  </div>
+  <div id="projects-container" class="widget">
+    <%= render MosWeb.ProjectsView, "frontpage_container.html", assigns %>
+  </div>
+  <div id="last-changes-container" class="widget">
+    <%= render MosWeb.LastChangesView, "frontpage_container.html", assigns %>
   </div>
 </section>

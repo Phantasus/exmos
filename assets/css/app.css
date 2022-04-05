@@ -1,52 +1,109 @@
 #page-header {
 }
-
 .nav-row {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
-
 .flex-filler {
-    flex-grow: 0.9;
+  flex-grow: 0.9;
 }
-
 .nav-row nav {
 }
-
 .flat-nav {
-    display: inline;
+  display: inline;
 }
-
 .flat-nav li {
-    display: inline;
-    margin: 0 3px 6px;
-    height: 100%;
-    padding: 0.5em 0.7em;
-    background-color: #4F5C7F;
-    color: white;
-    font: 76% "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  display: inline;
+  margin: 0 3px 6px;
+  height: 100%;
+  padding: 0.5em 0.7em;
+  background-color: #4F5C7F;
+  color: white;
 }
 
 .flat-nav a {
-    color: white;
-    text-decoration: none;
+  color: #fff;
 }
 
 .flat-nav a:visited {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
-
 .member-picture {
-    display: inline;
-    padding: 3px;
+  display: inline;
+  padding: 3px;
 }
-
 .member-picture img {
-    height: 54px;
-    width: 54px;
+  height: 54px;
+  width: 54px;
+}
+.member-picture {
+  color: #5D5EA2;
 }
 
-.member-picture a {
-    color: #5D5EA2
+a {
+  color: #5D5EA2;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+  background-color: #8c9ce9;
+  text-decoration: none;
+}
+
+body {
+    font: 76% "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+/* calendar component */
+
+#calendar-container {
+    width: 30em;
+}
+
+#calendar-events {
+    border: 1px solid #ddd;
+    margin: 1px;
+    padding: 0px;
+}
+
+.calendar-event {
+    background-color: #C8D8FF;
+    margin-bottom: 2px;
+    padding: 0.5em;
+}
+
+.event_location {
+    display: block;
+}
+
+.event_date {
+    font-weight: bold;
+}
+
+#announcements-container {
+    width: 40em;
+}
+
+/* announcementes */
+.alert-announcements {
+    border-left: 4px solid red;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-weight: bold;
+}
+
+.announcement {
+    border-bottom: 1px solid gray;
+}
+
+
+/* last changes*/
+.change-label {
+    display: block;
 }

@@ -116,7 +116,7 @@ defmodule Mos.Accounts.User do
     |> validate_password(opts)
   end
   
-  def username_changeset(user, attrs, opts \\ []) do
+  def username_changeset(user, attrs) do
     user
     |> cast(attrs, [:username])
     |> validate_username()
