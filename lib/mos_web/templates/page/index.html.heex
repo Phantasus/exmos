@@ -1,30 +1,8 @@
-<header id="page-header">
-  <div class="nav-row">
-    <div id="logo" class="flex-filler">
-        <a href="https://metalab.at/" title="Metalab OS">
-            <img src={Routes.static_path(@conn, "/images/metalab_logo.png")} alt="metalab Logo">
-        </a>
-    </div>
-    <nav id="interlinks" class="flex-filler">
-      <%= render MosWeb.SharedView, "important_navlinks.html", assigns %>
-    </nav>
-    <nav id="page-nav">
-      <ul id="user-menu">
-        <%= render MosWeb.SharedView, "user_menu.html", assigns %>
-      </ul>
-    </nav>
-  </div>
-</header>
-<section class="container" id="page-bottom1">
+<section class="container" id="page-container">
   <div id="calendar-container" class="widget">
       <%= render MosWeb.CalendarView, "frontpage_container.html", assigns %>
   </div>
-  <div id="introduction-container" class="widget">
-    <p>
-      220m² Raum im Herzen Wiens für technologisch-kreative Projekte, Veranstaltungen, Software, Hardware, Essen & mehr.... 
-    </p>
-  </div>
-  <div id="member-pictures" class="widget">
+  <div id="member-pictures-container" class="widget">
     <%= render MosWeb.MemberPicturesView, "frontpage_container.html", assigns %>
   </div>
   <div id="announcements-container" class="widget">

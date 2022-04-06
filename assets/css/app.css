@@ -52,6 +52,10 @@ a:hover {
   text-decoration: none;
 }
 
+#page-nav * {
+    display: inline;
+}
+
 body {
     font: 76% "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
@@ -63,7 +67,7 @@ ul {
 /* calendar component */
 
 #calendar-container {
-    width: 30em;
+    width: 27em;
 }
 
 #calendar-events {
@@ -72,17 +76,17 @@ ul {
     padding: 0px;
 }
 
-.calendar-event {
+.calendar.event {
     background-color: #C8D8FF;
     margin-bottom: 2px;
     padding: 0.5em;
 }
 
-.event_location {
+.event.location {
     display: block;
 }
 
-.event_date {
+.event.date {
     font-weight: bold;
 }
 
@@ -91,7 +95,7 @@ ul {
 }
 
 /* announcementes */
-.alert-announcements {
+.alert.announcements {
     border-left: 4px solid red;
     padding-left: 1em;
     padding-right: 1em;
@@ -102,8 +106,43 @@ ul {
     border-bottom: 1px solid gray;
 }
 
-
 /* last changes*/
-.change-label {
+.change .label {
     display: block;
+}
+
+/* projects */
+
+.project .teaser {
+    margin-top: 0.3em;
+}
+
+#page-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 300px;
+}
+
+#member-pictures-container {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+#announcements-container {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+}
+
+#projects-container {
+    grid-row-start: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+#last-changes-container {
+    grid-row-start: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
 }

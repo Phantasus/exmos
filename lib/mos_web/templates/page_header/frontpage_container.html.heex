@@ -1,0 +1,12 @@
+<header id="page-header">
+  <div class="nav-row">
+    <div id="logo" class="flex-filler">
+      <a href="https://metalab.at/" title="Metalab OS">
+        <img src={Routes.static_path(@conn, "/images/metalab_logo.png")} alt="metalab Logo">
+      </a>
+    </div>
+    <nav id="page-nav">
+        <%= render MosWeb.PageNavigationView, "frontpage_container.html", assigns %>
+    </nav>
+  </div>
+</header>
