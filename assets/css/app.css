@@ -22,6 +22,15 @@
   color: white;
 }
 
+#wiki-navbar li:hover {
+  color: #fff;
+  background-color: #8c9ce9;
+}
+#wiki-navbar li:hover a {
+  color: #fff;
+  background-color: #8c9ce9;
+}
+
 #wiki-navbar a {
   color: white;
   background-color: #4F5C7F;
@@ -36,6 +45,7 @@
 body {
   margin: 1px 1em 1em 4em;;
   font: 76% "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  color: #444;
 }
 
 /* footer cs s*/
