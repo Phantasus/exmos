@@ -1,7 +1,36 @@
-#page-header {
+#page-nav {
+  height: 50px;
 }
-#page-nav * {
-  display: inline;
+
+#user-menu {
+  display: inline-block;
+}
+
+#user-menu li {
+  display: inline-block;
+}
+
+#wiki-navbar {
+  display: inline-block;
+}
+
+#wiki-navbar li {
+  display: inline-block;
+  margin: 0 3px 6px;
+  padding: 7px;
+  background-color: #4F5C7F;
+  color: white;
+}
+
+#wiki-navbar a {
+  color: white;
+  background-color: #4F5C7F;
+}
+
+#wiki-navbar a:visited {
+  color: white;
+  background-color: #4F5C7F;
+  text-decoration: none;
 }
 
 body {
@@ -35,33 +64,13 @@ body {
 .flex-filler {
   flex-grow: 0.9;
 }
-.nav-row nav {
-}
-.flat-nav {
-  display: inline;
-}
-.flat-nav li {
-  display: inline;
-  margin: 0 3px 6px;
-  height: 100%;
-  padding: 0.5em 0.7em;
-  background-color: #4F5C7F;
-  color: white;
-}
-
-.flat-nav a {
-  color: #fff;
-}
-
-.flat-nav a:visited {
-  color: white;
-  text-decoration: none;
-}
 
 /* member picture container */
 
 .member-picture {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 0;
   margin-right: 1px;
   padding: 2px;
@@ -87,9 +96,8 @@ body {
   width: 530px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  text-align: center;
 }
 
 .member-picture img {
@@ -205,5 +213,47 @@ h1 {
 
 /* login forms */
 form input {
-    display: block;
+  display: block;
+}
+
+/* page notificatios */
+.alert.alert-success {
+  background-color: #38ad69;
+  display: flex;
+  height: 3em;
+  font-size: 1.3em;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+
+.alert.alert-info {
+  background-color: #429ed7;
+  display: flex;
+  height: 3em;
+  font-size: 1.3em;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+
+.alert.alert-warning {
+  color:#564101;
+  background:#fdcf44
+  display: flex;
+  height: 3em;
+  font-size: 1.3em;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+
+.alert.alert-danger {
+  background:#e23912;
+  display: flex;
+  height: 3em;
+  font-size: 1.3em;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
 }

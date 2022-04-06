@@ -1,7 +1,13 @@
 <%= render MosWeb.PageHeaderView, "frontpage_container.html", assigns %>
 <main class="container" id="page-main-container">
-  <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-  <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+  <div id="page-notifications">
+    <%= if info_message = get_flash(@conn, :info) do %>
+    <p class="alert alert-info" role="alert"><%= info_message %></p>
+    <% end %>
+    <%= if error_message = get_flash(@conn, :error) do %>
+    <p class="alert alert-danger" role="alert"><%= error_message %></p>
+    <% end %>
+  </div>
   <%= @inner_content %>
 </main>
 <%= render MosWeb.PageFooterView, "frontpage_container.html", assigns %>

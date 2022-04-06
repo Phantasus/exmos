@@ -11,15 +11,11 @@ defmodule MosWeb.UserSettingsController do
   end
 
   def update(conn, %{"action" => "update_username"} = params) do
-    %{"current_password" => password, "user" => user_params} = params
+    %{"user" => user_params} = params
     user = conn.assigns.current_user
 
-    case Accounts.update_user_username(user, password, user_params) do
+    case Accounts.update_user_username(user, user_params) do
       {:ok, applied_user} ->
-        Accounts.deliver_update_username_info(
-          applied_user
-        )
-
         conn
         |> put_flash(
           :info,

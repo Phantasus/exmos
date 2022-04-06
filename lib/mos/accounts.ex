@@ -141,12 +141,10 @@ defmodule Mos.Accounts do
     |> Ecto.Changeset.apply_action(:update)
   end
 
-  def update_user_username(user, password, attrs) do
+  def update_user_username(user, attrs) do
     changeset =
       user
       |> User.username_changeset(attrs)
-      |> User.validate_current_password(password)
-      |> User.confirm_changeset()
 
     Ecto.Multi.new()
     |> Ecto.Multi.update(:user, changeset)
