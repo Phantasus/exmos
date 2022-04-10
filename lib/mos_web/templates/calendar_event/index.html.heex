@@ -1,0 +1,36 @@
+<h1>Listing Calendar events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Display name</th>
+      <th>Teaser</th>
+      <th>Startdate</th>
+      <th>Startdate utc offset</th>
+      <th>Enddate</th>
+      <th>Enddate utc offset</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for calendar_event <- @calendar_events do %>
+    <tr>
+      <td><%= calendar_event.display_name %></td>
+      <td><%= calendar_event.teaser %></td>
+      <td><%= calendar_event.startdate %></td>
+      <td><%= calendar_event.startdate_utc_offset %></td>
+      <td><%= calendar_event.enddate %></td>
+      <td><%= calendar_event.enddate_utc_offset %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.calendar_event_path(@conn, :show, calendar_event) %></span>
+        <span><%= link "Edit", to: Routes.calendar_event_path(@conn, :edit, calendar_event) %></span>
+        <span><%= link "Delete", to: Routes.calendar_event_path(@conn, :delete, calendar_event), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Calendar event", to: Routes.calendar_event_path(@conn, :new) %></span>

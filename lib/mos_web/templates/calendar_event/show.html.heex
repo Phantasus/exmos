@@ -1,0 +1,38 @@
+<h1>Show Calendar event</h1>
+
+<ul>
+
+  <li>
+    <strong>Display name:</strong>
+    <%= @calendar_event.display_name %>
+  </li>
+
+  <li>
+    <strong>Teaser:</strong>
+    <%= @calendar_event.teaser %>
+  </li>
+
+  <li>
+    <strong>Startdate:</strong>
+    <%= @calendar_event.startdate %>
+  </li>
+
+  <li>
+    <strong>Startdate utc offset:</strong>
+    <%= @calendar_event.startdate_utc_offset %>
+  </li>
+
+  <li>
+    <strong>Enddate:</strong>
+    <%= @calendar_event.enddate %>
+  </li>
+
+  <li>
+    <strong>Enddate utc offset:</strong>
+    <%= @calendar_event.enddate_utc_offset %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.calendar_event_path(@conn, :edit, @calendar_event) %></span> |
+<span><%= link "Back", to: Routes.calendar_event_path(@conn, :index) %></span>
