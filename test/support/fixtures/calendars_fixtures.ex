@@ -22,4 +22,16 @@ defmodule Mos.CalendarsFixtures do
 
     calendar_event
   end
+
+  def calendar_fixture(attrs \\ %{}) do
+    {:ok, calendar} =
+      attrs
+      |> Enum.into(%{
+        display_name: "My Calendar",
+        teaser: "some teaser"
+      })
+      |> Mos.Calendars.create_calendar()
+
+    calendar
+  end
 end

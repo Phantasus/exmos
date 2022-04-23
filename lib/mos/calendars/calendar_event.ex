@@ -16,8 +16,15 @@ defmodule Mos.Calendars.CalendarEvent do
 
   @doc false
   def changeset(calendar_event, attrs) do
+    required_attributes = [
+      :identifier, :calendar_id,
+      :display_name, :teaser,
+      :startdate, :startdate_utc_offset,
+      :enddate, :enddate_utc_offset
+    ]
+    
     calendar_event
     |> cast(attrs, [:display_name, :teaser, :startdate, :startdate_utc_offset, :enddate, :enddate_utc_offset])
-    |> validate_required([:display_name, :teaser, :startdate, :startdate_utc_offset, :enddate, :enddate_utc_offset])
+    |> validate_required(required_attributes)
   end
 end

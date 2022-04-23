@@ -7,6 +7,7 @@ defmodule Mos.Calendars do
   alias Mos.Repo
 
   alias Mos.Calendars.CalendarEvent
+  alias Mos.Calendars.Calendar
 
   @doc """
   Returns the list of calendar_events.
@@ -50,8 +51,19 @@ defmodule Mos.Calendars do
 
   """
   def create_calendar_event(attrs \\ %{}) do
-    %CalendarEvent{}
+    %CalendarEvent{identifier: find_new_identifier()}
     |> CalendarEvent.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc "Returns a new, hopefully unique identifier for calendars"
+  def find_new_identifier() do
+    Mos.Identifiers.find_new_mixed_identifier()
+  end
+
+  def create_calendar(attrs \\ %{}) do
+    %Calendar{identifier: find_new_identifier()}
+    |> Calendar.changeset(attrs)
     |> Repo.insert()
   end
 

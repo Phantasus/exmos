@@ -1,9 +1,10 @@
-defmodule Mos.Mos.Calendars.Calendar do
+defmodule Mos.Calendars.Calendar do
   use Ecto.Schema
   import Ecto.Changeset
 
   schema "calendars" do
-    field :display_name, :string
+    field :identifier,           :string
+    field :display_name,         :string
 
     timestamps()
   end
