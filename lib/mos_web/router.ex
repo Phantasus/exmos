@@ -57,7 +57,15 @@ defmodule MosWeb.Router do
     end
   end
 
-  ## Authentication routes
+  # shell
+  scope "/admin", MosWeb do
+    pipe_through [:browser, :require_authenticated_user]
+
+    live "/shell", AdminShellLive
+  end
+
+  
+  # Authentication routes
 
   scope "/", MosWeb do
     pipe_through [:browser, :redirect_if_user_is_authenticated]

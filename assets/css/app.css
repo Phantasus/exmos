@@ -1,9 +1,17 @@
+body {
+  margin: 0px 1em 1em 4em;;
+  font: 76% "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  color: #444;
+}
+
 #page-nav {
   height: 50px;
 }
 
 #user-menu {
   display: inline-block;
+  margin: 0px;
+  padding-top: 0px;
 }
 
 #user-menu li {
@@ -11,6 +19,7 @@
 }
 
 #wiki-navbar {
+  margin: 0px;
   display: inline-block;
 }
 
@@ -42,16 +51,13 @@
   text-decoration: none;
 }
 
+#logo {
+    margin-top: 1em;
+}
+
 #logo:hover {
   background-color: #8c9ce9;
 }
-
-body {
-  margin: 1px 1em 1em 4em;;
-  font: 76% "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-  color: #444;
-}
-
 /* footer cs s*/
 #page-footer {
   width: 100%;
@@ -143,4 +149,21 @@ form input {
   font-weight: bold;
   justify-content: center;
   align-items: center;
+}
+
+.shell-container {
+    width: 800px;
+    height: 500px;
+}
+
+.shell-history {
+    width: 100%;
+    height: 80%;
+    
+    scroll-behavior: smooth;
+    overflow-wrap: break-word;
+    overflow-y: scroll;
+    
+    font-family: monospace;
+    font-size: 9pt;
 }

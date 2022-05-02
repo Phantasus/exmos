@@ -1,0 +1,12 @@
+<div id="admin-shell-container" class="shell-container">
+    <div id="admin-shell-history" class="shell-history">
+    <%= for item <- @history do %>
+        <p id={item.id}><%= raw(item.value) %></p>
+    <% end %>
+    </div>
+
+    <.form let={f} for={:command} phx-submit="eval" %>
+    <%= text_input f, :line, style: "width: 100%", value: "" %>
+    <%= submit "Eval" %>
+    </.form>
+</div>
